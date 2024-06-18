@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accounting</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #7f48af;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        .header-title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .header-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .header-links a:hover {
+            text-decoration: underline;
+        }
+
+        .header-icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-icons span {
+            margin-left: 15px;
+            cursor: pointer;
+        }
+
+        .content {
+            padding: 20px;
+            background-color: white;
+            margin: 0;
+            border-radius: 0;
+            box-shadow: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .column {
+            width: 48%;
+        }
+
+        .filter-section, .journals-section, .additional-filters {
+            margin-bottom: 20px;
+        }
+
+        .filter-group {
+            margin-bottom: 10px;
+        }
+
+        .filter-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: normal;
+            font-size: 14px;
+        }
+
+        .filter-group input[type="date"], .filter-group input[type="text"], .journals-section select {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 0;
+            font-size: 14px;
+        }
+
+        .filter-group input[type="radio"], .filter-group input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        .filter-group div {
+            display: flex;
+            align-items: center;
+        }
+
+        .filter-group div label {
+            margin: 0;
+            font-size: 14px;
+            font-weight: normal;
+        }
+
+        .journals-section select {
+            height: auto;
+            font-size: 14px;
+        }
+
+        .journals-section {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .journals-section select option {
+            padding: 5px;
+        }
+
+        .additional-filters {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .additional-filters .filter-group {
+            margin-bottom: 10px;
+        }
+
+        .additional-filters .filter-group input[type="text"] {
+            width: 100%;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+        }
+
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+        }
+
+        .form-group .select-option {
+            background-color: #f0f0f0;
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            cursor: pointer;
+        }
+
+        .form-group .select-option:hover {
+            background-color: #ddd;
+        }
+
+        .form-group .select-option.active {
+            background-color: #895fb9;
+            color: white;
+        }
+
+        .form-group .select-options {
+            display: none;
+            position: absolute;
+            background-color: white;
+            border: 1px solid #ddd;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            width: 100%;
+        }
+
+        .form-group .select-options .option {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .form-group .select-options .option:hover {
+            background-color: #f0f0f0;
+        }
+
+        .form-group .select-options .option.selected {
+            background-color: #895fb9;
+            color: white;
+        }
+
+        .form-group input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        .form-group .radio-label {
+            display: inline-block;
+        }
+
+        .form-group button,
+        .form-group p {
+            display: inline;
+            margin: 0;
+        }
+
+        .filter-group .select-options {
+            top: 100%;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="header-title">Accounting</div>
+    <div class="header-links">
+        <a href="#">Overview</a>
+        <a href="#">Customers</a>
+        <a href="#">Vendors</a>
+        <a href="#">Accounting</a>
+        <a href="#">Reporting</a>
+        <a href="#">Configuration</a>
+    </div>
+    <div class="header-icons">
+        <span class="settings-icon">⚙</span>
+        <span class="notifications-icon">🔔</span>
+    </div>
+</div>
+<div class="content">
+    <div class="column">
+        <div class="filter-section">
+            <div class="filter-group">
+                <label><b>Target Moves</b></label>
+                <div>
+                    <input type="radio" id="posted-entries" name="target-moves" checked>
+                    <label for="posted-entries">All Posted Entries</label>
+                </div>
+                <div>
+                    <input type="radio" id="all-entries" name="target-moves">
+                    <label for="all-entries">All Entries</label>
+                </div>
+            </div>
+            <div class="filter-group">
+                <label><b>Display Accounts</b></label>
+                <div>
+                    <input type="radio" id="all-accounts" name="display-accounts" checked>
+                    <label for="all-accounts">All</label>
+                </div>
+                <div>
+                    <input type="radio" id="with-movements" name="display-accounts">
+                    <label for="with-movements">With movements</label>
+                </div>
+                <div>
+                    <input type="radio" id="non-zero-balance" name="display-accounts">
+                    <label for="non-zero-balance">With balance is not equal to 0</label>
+                </div>
+            </div>
+            <div class="filter-group">
+                <label><b>Start Date</b></label>
+                <input type="date" id="start-date">
+            </div>
+        </div>
+    </div>
+    <div class="column">
+        <div class="filter-section">
+            <div class="filter-group">
+                <label><b>Sort by</b></label>
+                <div>
+                    <input type="radio" id="sort-by-date" name="sort-by" checked>
+                    <label for="sort-by-date">Date</label>
+                </div>
+                <div>
+                    <input type="radio" id="sort-by-journal" name="sort-by">
+                    <label for="sort-by-journal">Journal & Partner</label>
+                </div>
+            </div>
+            <div class="filter-group">
+                <input type="checkbox" id="include-initial-balances">
+                <label for="include-initial-balances"><b>Include Initial Balances</b></label>
+            </div>
+            <div class="filter-group">
+                <label><b>End Date</b></label>
+                <input type="date" id="end-date">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="journals">Journals:</label>
+            <div class="select-option" id="select-option-journals">
+                Customer Invoices
+            </div>
+            <div class="select-options" id="select-options-journals">
+                <div class="option" data-value="customer-invoices">Customer Invoices</div>
+                <div class="option" data-value="vendor-bills">Vendor Bills</div>
+                <div class="option" data-value="miscellaneous-operations">Miscellaneous Operations</div>
+                <div class="option" data-value="exchange-difference">Exchange Difference</div>
+                <div class="option" data-value="bank">Bank</div>
+                <div class="option" data-value="cash">Cash</div>
+                <div class="option" data-value="cash-basis-taxes">Cash Basis Taxes</div>
+                <div class="option" data-value="inventory-valuation">Inventory Valuation</div>
+                <div class="option" data-value="point-of-sale">Point Of Sale</div>
+            </div>
+            <div class="additional-filters">
+                <div class="filter-group">
+                    <label for="analytic-accounts">Analytic Accounts</label>
+                    <input type="text" id="analytic-accounts">
+                </div>
+                <div class="filter-group">
+                    <label for="accounts">Accounts</label>
+                    <input type="text" id="accounts">
+                </div>
+                <div class="filter-group">
+                    <label for="partners">Partners</label>
+                    <input type="text" id="partners">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+

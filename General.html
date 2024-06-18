@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f5f5f5;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  background-color: #9b59b6;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px 5px 0 0;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.nav {
+  background-color:  #7f48af;
+  padding: 10px;
+  border-radius: 0 0 5px 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav li {
+  margin-right: 20px;
+}
+
+.nav li a {
+  color: #333;
+  text-decoration: none;
+}
+
+.content {
+  padding: 20px;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f0f0f0;
+}
+
+.account-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.account-details .title {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.account-details .info {
+  display: flex;
+  align-items: center;
+}
+
+.account-details .info img {
+  margin-right: 10px;
+}
+
+.account-details .info .user {
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  
+
+  <div class="nav">
+    <ul>
+    <li><a href="#">Accounting</a></li> 
+      <li><a href="#">Overview</a></li>
+      <li><a href="#">Customers</a></li>
+      <li><a href="#">Vendors</a></li>
+      <li><a href="#">Accounting</a></li>
+      <li><a href="#">Reporting</a></li>
+      <li><a href="#">Configuration</a></li>
+    </ul>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Journals</th>
+            <th>Customer Invoices</th>
+            <th>Vendor Bills</th>
+            <th>Miscellaneous Operations</th>
+            <th>Exchange Difference</th>
+            <th>Bank</th>
+            <th>Cash</th>
+            <th>Cash Basis Taxes</th>
+            <th>Inventory Valuation</th>
+            <th>Point of Sale</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="text" placeholder="Search Journals"></td>
+            <td><input type="text" placeholder="Search Customer Invoices"></td>
+            <td><input type="text" placeholder="Search Vendor Bills"></td>
+            <td><input type="text" placeholder="Search Miscellaneous Operations"></td>
+            <td><input type="text" placeholder="Search Exchange Difference"></td>
+            <td><input type="text" placeholder="Search Bank"></td>
+            <td><input type="text" placeholder="Search Cash"></td>
+            <td><input type="text" placeholder="Search Cash Basis Taxes"></td>
+            <td><input type="text" placeholder="Search Inventory Valuation"></td>
+            <td><input type="text" placeholder="Search Point of Sale"></td>
+          </tr>
+          <tr>
+            <td><input type="text" placeholder="Search Analytic Accounts"></td>
+            <td colspan="9"><input type="text" placeholder="Search Accounts"></td>
+          </tr>
+          <tr>
+            <td><input type="text" placeholder="Search Partners"></td>
+            <td colspan="9"><input type="text" placeholder="Search (101401 Bank Suspense Account)"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="account-details">
+      <div class="title">
+        YourCompany: General ledger
+      </div>
+      <div class="info">
+        <div class="user">
+          2022-02-27 07:19
+        </div>
+      </div>
+    </div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Journals:</th>
+            <th>Display Account</th>
+            <th>Target Moves:</th>
+          </tr>
+          <tr>
+            <td>INV, BILL, MISC, EXCH, BNK1, CSH1, CABA, STJ, POSS</td>
+            <td>With movements</td>
+            <td>All Posted Entries</td>
+          </tr>
+          <tr>
+            <th>Date</th>
+            <th>JRNL</th>
+            <th>Partner</th>
+            <th>Ref</th>
+            <th>Move</th>
+            <th>Analytic Account</th>
+            <th>Entry Label</th>
+            <th>Debit</th>
+            <th>Credit</th>
+            <th>Balance</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          <tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

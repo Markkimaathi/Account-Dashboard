@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Accounting</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: #895fb9;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.navbar {
+  background-color: #895fb9;
+  overflow: hidden;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.content {
+  padding: 20px;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: space-between;
+}
+
+.column {
+  width: 48%;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #f0f0f0;
+}
+
+.button {
+  background-color: #895fb9;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #6b48a0;
+}
+
+#cancel-button {
+  background-color: white;
+  color: #0a0214;
+}
+
+#cancel-button:hover {
+  background-color: #f2f2f2; 
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="text"], 
+.form-group input[type="date"], 
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+.form-group input[type="radio"] {
+  margin-right: 5px;
+}
+
+.form-group .radio-label {
+  display: inline-block;
+}
+
+.form-group .select-option {
+  background-color: #f0f0f0;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.form-group .select-option:hover {
+  background-color: #ddd;
+}
+
+.form-group .select-option.active {
+  background-color: #895fb9;
+  color: white;
+}
+
+.form-group .select-options {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ddd;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.form-group .select-options .option {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.form-group .select-options .option:hover {
+  background-color: #f0f0f0;
+}
+
+.form-group .select-options .option.selected {
+  background-color: #895fb9;
+  color: white;
+}
+
+.form-group button,
+.form-group p {
+    display: inline;
+    margin: 0;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="navbar">
+    <a href="#" class="active">Accounting</a>
+    <a href="#">Dashboard</a>
+    <a href="#">Customers</a>
+    <a href="#">Vendors</a>
+    <a href="#">Follow Ups</a>
+    <a href="#">Reporting</a>
+    <a href="#">Configuration</a>
+  </div>
+  <div class="content">
+    <div class="column">
+      <div class="form-group">
+        <label for="target-moves">Target Moves:</label>
+        <input type="radio" id="posted-entries" name="target-moves" value="posted-entries" checked>
+        <label for="posted-entries" class="radio-label">Posted Entries</label><br>
+        <input type="radio" id="all-entries" name="target-moves" value="all-entries">
+        <label for="all-entries" class="radio-label">All Entries</label>
+      </div>
+      <div class="form-group">
+        <label for="start-date">Start Date:</label>
+        <input type="date" id="start-date">
+      </div>
+      <div class="form-group">
+        <label for="journals">Journals:</label>
+        <div class="select-option" id="select-option-journals">
+          Customer Invoices 
+        </div>
+        <div class="select-options" id="select-options-journals">
+          <div class="option" data-value="customer-invoices">Customer Invoices</div>
+          <div class="option" data-value="vendor-bills">Vendor Bills</div>
+          <div class="option" data-value="miscellaneous-operations">Miscellaneous Operations</div>
+          <div class="option" data-value="exchange-difference">Exchange Difference</div>
+          <div class="option" data-value="bank">Bank</div>
+          <div class="option" data-value="cash">Cash</div>
+          <div class="option" data-value="cash-basis-taxes">Cash Basis Taxes</div>
+          <div class="option" data-value="inventory-valuation">Inventory Valuation</div>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="form-group">
+        <label for="end-date">End Date:</label>
+        <input type="date" id="end-date">
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <button class="button" id="view-button">View</button> <p>or</p>
+    <button class="button" id="print-button">Print</button> <p>or</p>
+    <button class="button" id="print-excel-button">Print Excel</button> 
+    <button class="button" id="cancel-button">Cancel</button> 
+  </div>
+  <h1>Account Day Book</h1>
+  <p>Journals:<br>
+    INV, BILL, MISC, EXCH, BNK1, CSH1, CABA, STJ
+  </p>
+  <p>Target Moves:<br>
+    Posted Entries
+  </p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>JRNL</th>
+        <th>Partner</th>
+        <th>Ref</th>
+        <th>Move</th>
+        <th>Entry Label</th>
+        <th>Debit</th>
+        <th>Credit</th>
+        <th>Balance</th>
+        <th>Currency</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const selectOptionJournals = document.getElementById('select-option-journals');
+  const selectOptionsJournals = document.getElementById('select-options-journals');
+  const selectOptionsJournalsOptions = selectOptionsJournals.querySelectorAll('.option');
+
+  selectOptionJournals.addEventListener('click', () => {
+    selectOptionsJournals.style.display = 'block';
+  });
+
+  selectOptionsJournalsOptions.forEach(option => {
+    option.addEventListener('click', () => {
+      selectOptionJournals.textContent = option.textContent;
+      selectOptionsJournals.style.display = 'none';
+    });
+  });
+});
+</script>
+</body>
+</html>

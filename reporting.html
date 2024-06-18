@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  background-color: #9b78c8;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.header li {
+  margin-left: 20px;
+  position: relative;
+}
+
+.header li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+}
+
+.column {
+  width: 48%;
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.form-group input[type="checkbox"],
+.form-group input[type="radio"] {
+  margin-right: 5px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button {
+  background-color: #9b78c8;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #79559e;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #130101;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: rgb(255, 250, 250);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile-image {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>Accounting</h1>
+    <ul>
+      <li><a href="#">Overview</a></li>
+      <li><a href="#">Customers</a></li>
+      <li><a href="#">Vendors</a></li>
+      <li><a href="#">Accounting</a></li>
+      <li class="dropdown">
+        <a href="#">Reporting</a>
+        <div class="dropdown-content">
+          <a href="#">Financial Reports</a>
+          <a href="#">Balance Sheet</a>
+          <a href="#">Profit and Loss</a>
+          <a href="#">Partner Reports</a>
+          <a href="#">Partner Ledger</a>
+          <a href="#">Aged Partner Balance</a>
+          <a href="#">Aged Receivable</a>
+          <a href="#">Aged Payable</a>
+          <a href="#">Audit Reports</a>
+          <a href="#">General Ledger</a>
+          <a href="#">Trial Balance</a>
+          <a href="#">Tax Report</a>
+          <a href="#">Journals Audit</a>
+          <a href="#">Management</a>
+          <a href="#">Invoice Analysis</a>
+        </div>
+      </li>
+      <li><a href="#">Configuration</a></li>
+    </ul>
+    <div class="header-icons">
+      <span class="settings-icon">⚙</span>
+      <span class="notifications-icon">🔔</span>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="column">
+      <div class="section">
+        <div class="section-title">Account Reports</div>
+        <div class="form-group">
+          <label for="balance-sheet">Balance Sheet</label>
+          <input type="text" id="balance-sheet" placeholder="Balance Sheet">
+        </div>
+        <div class="form-group">
+          <label for="enable-comparison">Enable Comparison</label>
+          <input type="checkbox" id="enable-comparison">
+        </div>
+        <div class="form-group">
+          <label for="start-date">Start Date</label>
+          <input type="date" id="start-date">
+        </div>
+        <div class="buttons">
+          <button class="button">View</button>
+          <button class="button">Print</button>
+          <button class="button">Print Excel</button>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="section">
+        <div class="section-title">Target Moves</div>
+        <div class="form-group">
+          <label for="all-posted-entries">
+            <input type="radio" id="all-posted-entries" name="entries">
+            All Posted Entries
+          </label>
+        </div>
+        <div class="form-group">
+          <label for="all-entries">
+            <input type="radio" id="all-entries" name="entries">
+            All Entries
+          </label>
+        </div>
+        <div class="form-group">
+          <label for="display-debit-credit">Display Debit/Credit Columns</label>
+          <input type="checkbox" id="display-debit-credit">
+        </div>
+        <div class="form-group">
+          <label for="end-date">End Date</label>
+          <input type="date" id="end-date">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
