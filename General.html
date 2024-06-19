@@ -1,230 +1,165 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #f5f5f5;
-}
-
-.container {
-  width: 90%;
-  margin: 0 auto;
-  background-color: #fff;
-  border-radius: 5px;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.header {
-  background-color: #9b59b6;
-  color: #fff;
-  padding: 10px;
-  border-radius: 5px 5px 0 0;
-}
-
-.header h1 {
-  margin: 0;
-}
-
-.nav {
-  background-color:  #7f48af;
-  padding: 10px;
-  border-radius: 0 0 5px 5px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-.nav li {
-  margin-right: 20px;
-}
-
-.nav li a {
-  color: #333;
-  text-decoration: none;
-}
-
-.content {
-  padding: 20px;
-}
-
-.table-container {
-  overflow-x: auto;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th, td {
-  text-align: left;
-  padding: 8px;
-  border-bottom: 1px solid #ddd;
-}
-
-th {
-  background-color: #f0f0f0;
-}
-
-.account-details {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-.account-details .title {
-  font-weight: bold;
-  font-size: 1.2em;
-}
-
-.account-details .info {
-  display: flex;
-  align-items: center;
-}
-
-.account-details .info img {
-  margin-right: 10px;
-}
-
-.account-details .info .user {
-  font-weight: bold;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Ledger</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<div class="container">
-  
-
-  <div class="nav">
-    <ul>
-    <li><a href="#">Accounting</a></li> 
-      <li><a href="#">Overview</a></li>
-      <li><a href="#">Customers</a></li>
-      <li><a href="#">Vendors</a></li>
-      <li><a href="#">Accounting</a></li>
-      <li><a href="#">Reporting</a></li>
-      <li><a href="#">Configuration</a></li>
-    </ul>
+    <div class="container">
+        <header>
+            <div class="header-left">
+                <h1>Accounting</h1>
+                <nav>
+                    <a href="#">Overview</a>
+                    <a href="#">Customers</a>
+                    <a href="#">Vendors</a>
+                    <a href="#">Accounting</a>
+                    <a href="#">Reporting</a>
+                    <a href="#">Configuration</a>
+                </nav>
+            </div>
+            <div class="header-right">
+                <span class="user-info">Mitchell Admin (15,25)</span>
+            </div>
+        </header>
+        
+        <main>
+            <section class="filter-section">
+                <div class="journals">
+                    <label for="journals">Journals:</label>
+                    <select id="journals" multiple>
+                        <option>Customer Invoices</option>
+                        <option>Vendor Bills</option>
+                        <option>Miscellaneous Operations</option>
+                        <option>Exchange Difference</option>
+                        <option>Bank</option>
+                        <option>Cash</option>
+                        <option>Cash Basis Taxes</option>
+                        <option>Inventory Valuation</option>
+                        <option>Point of Sale</option>
+                    </select>
+                </div>
+                <div class="accounts">
+                    <label for="accounts">Accounts:</label>
+                    <select id="accounts">
+                        <option>101401 Bank Suspense Account</option>
+                    </select>
+                </div>
+                <div class="partners">
+                    <label for="partners">Partners:</label>
+                    <input type="text" id="partners">
+                </div>
+            </section>
+            
+            <section class="buttons">
+                <button>View</button>
+                <button>Print</button>
+                <button>Print Excel</button>
+            </section>
+            
+            <section class="ledger">
+                <h2>YourCompany: General ledger</h2>
+                <div class="ledger-info">
+                    <p>Journals: INV, BILL, MISC, EXCH, BNK1, CSH1, CABA, STJ, POSS</p>
+                    <p>Display Account: With movements</p>
+                    <p>Target Moves: All Posted Entries</p>
+                    <p>Sorted By: Date</p>
+                </div>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>JRNL</th>
+                            <th>Partner</th>
+                            <th>Ref</th>
+                            <th>Move</th>
+                            <th>Analytic Account</th>
+                            <th>Entry Label</th>
+                            <th>Debit</th>
+                            <th>Credit</th>
+                            <th>Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2022-01-01</td>
+                            <td>BNK1</td>
+                            <td>Azure Interior</td>
+                            <td>BNK1/2022/01/0002</td>
+                            <td>INV/2022/000002 and INV/2022/000003</td>
+                            <td></td>
+                            <td>Bank Fees</td>
+                            <td>$32.58</td>
+                            <td>$1,275.00</td>
+                            <td>$-4,481.87</td>
+                        </tr>
+                        <tr>
+                            <td>2022-01-01</td>
+                            <td>BNK1</td>
+                            <td>Azure Interior</td>
+                            <td>BNK1/2022/01/0003</td>
+                            <td>Bank Fees</td>
+                            <td></td>
+                            <td></td>
+                            <td>$32.58</td>
+                            <td>$0.00</td>
+                            <td>$-1,242.42</td>
+                        </tr>
+                        <tr>
+                            <td>2022-01-01</td>
+                            <td>BNK1</td>
+                            <td>Azure Interior</td>
+                            <td>BNK1/2022/01/0004</td>
+                            <td>Payment of Invoice 2022/000001</td>
+                            <td></td>
+                            <td></td>
+                            <td>$0.00</td>
+                            <td>$0.00</td>
+                            <td>$-3,892.42</td>
+                        </tr>
+                        <tr>
+                            <td>2022-01-01</td>
+                            <td>BNK1</td>
+                            <td>Azure Interior</td>
+                            <td>BNK1/2022/01/0005</td>
+                            <td>Year Interests</td>
+                            <td></td>
+                            <td></td>
+                            <td>$0.00</td>
+                            <td>$102.78</td>
+                            <td>$-3,995.20</td>
+                        </tr>
+                        <tr>
+                            <td>2022-01-01</td>
+                            <td>BNK1</td>
+                            <td>Deco Addict</td>
+                            <td>BNK1/2022/01/0006</td>
+                            <td>INV/2022/000002</td>
+                            <td></td>
+                            <td></td>
+                            <td>$0.00</td>
+                            <td>$750.00</td>
+                            <td>$-4,745.20</td>
+                        </tr>
+                        <tr>
+                            <td>2022-01-01</td>
+                            <td>BNK1</td>
+                            <td>Deco Addict</td>
+                            <td>BNK1/2022/01/0007</td>
+                            <td>ZR789238 1007 AX 9411516318 T5 BRT. 100,00€ c/ croip</td>
+                            <td></td>
+                            <td></td>
+                            <td>$0.00</td>
+                            <td>$96.67</td>
+                            <td>$-4,841.87</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
     </div>
-  </div>
-
-  <div class="content">
-    <div class="table-container">
-      <table>
-        <thead>
-          <tr>
-            <th>Journals</th>
-            <th>Customer Invoices</th>
-            <th>Vendor Bills</th>
-            <th>Miscellaneous Operations</th>
-            <th>Exchange Difference</th>
-            <th>Bank</th>
-            <th>Cash</th>
-            <th>Cash Basis Taxes</th>
-            <th>Inventory Valuation</th>
-            <th>Point of Sale</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><input type="text" placeholder="Search Journals"></td>
-            <td><input type="text" placeholder="Search Customer Invoices"></td>
-            <td><input type="text" placeholder="Search Vendor Bills"></td>
-            <td><input type="text" placeholder="Search Miscellaneous Operations"></td>
-            <td><input type="text" placeholder="Search Exchange Difference"></td>
-            <td><input type="text" placeholder="Search Bank"></td>
-            <td><input type="text" placeholder="Search Cash"></td>
-            <td><input type="text" placeholder="Search Cash Basis Taxes"></td>
-            <td><input type="text" placeholder="Search Inventory Valuation"></td>
-            <td><input type="text" placeholder="Search Point of Sale"></td>
-          </tr>
-          <tr>
-            <td><input type="text" placeholder="Search Analytic Accounts"></td>
-            <td colspan="9"><input type="text" placeholder="Search Accounts"></td>
-          </tr>
-          <tr>
-            <td><input type="text" placeholder="Search Partners"></td>
-            <td colspan="9"><input type="text" placeholder="Search (101401 Bank Suspense Account)"></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="account-details">
-      <div class="title">
-        YourCompany: General ledger
-      </div>
-      <div class="info">
-        <div class="user">
-          2022-02-27 07:19
-        </div>
-      </div>
-    </div>
-    <div class="table-container">
-      <table>
-        <thead>
-          <tr>
-            <th>Journals:</th>
-            <th>Display Account</th>
-            <th>Target Moves:</th>
-          </tr>
-          <tr>
-            <td>INV, BILL, MISC, EXCH, BNK1, CSH1, CABA, STJ, POSS</td>
-            <td>With movements</td>
-            <td>All Posted Entries</td>
-          </tr>
-          <tr>
-            <th>Date</th>
-            <th>JRNL</th>
-            <th>Partner</th>
-            <th>Ref</th>
-            <th>Move</th>
-            <th>Analytic Account</th>
-            <th>Entry Label</th>
-            <th>Debit</th>
-            <th>Credit</th>
-            <th>Balance</th>
-          </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          <tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
-
 </body>
 </html>
