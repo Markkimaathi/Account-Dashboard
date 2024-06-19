@@ -1,1 +1,1 @@
-simple account dashboard using html and css, literally!
+simple account dashboards using html and css, literally!
