@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-color: #fff;
+  font-family: sans-serif;
+  color: #222;
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.header {
+  background-color: #9254be;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px 5px 0 0;
+}
+.header h1 {
+  margin: 0;
+}
+.content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 0 0 5px 5px;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px; /* Reduced margin */
+}
+.column {
+  flex: 1;
+  margin-right: 20px;
+}
+.column:last-child {
+  margin-right: 0;
+}
+.column label {
+  font-weight: bold;
+}
+.column input, .column select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.column div {
+  margin-bottom: 5px; /* Reduced margin */
+}
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px; /* Added margin to separate buttons from content */
+}
+button {
+  background-color: #9254be;
+  color: #fff;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.table-container {
+  margin-top: 20px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+th {
+  background-color: #f2f2f2;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>Accounting</h1>
+  </div>
+  <div class="content">
+    <div class="row">
+      <div class="column">
+        <label for="start-date">Start Date</label>
+        <input type="text" id="start-date" value="02/27/2022">
+        
+        <label for="partner">Partner's</label>
+        <div>
+          <input type="radio" id="receivable" name="partner" checked>
+          <label for="receivable">Receivable Accounts</label>
+        </div>
+        <div>
+          <input type="radio" id="payable" name="partner">
+          <label for="payable">Payable Accounts</label>
+        </div>
+        <div>
+          <input type="radio" id="both" name="partner">
+          <label for="both">Receivable and Payable Accounts</label>
+        </div>
+      </div>
+      <div class="column">
+        <label for="period-length">Period Length (days)</label>
+        <input type="number" id="period-length" value="30">
+        
+        <div class="form-group">
+            <label for="target-moves">Target Moves:</label>
+            <input type="radio" id="posted-entries" name="target-moves" value="posted-entries" checked>
+            <label for="posted-entries" class="radio-label">Posted Entries</label><br>
+            <input type="radio" id="all-entries" name="target-moves" value="all-entries">
+            <label for="all-entries" class="radio-label">All Entries</label>
+          </div>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="button-row">
+      <button>View</button>
+      <button>Print</button>
+      <button>Print Excel</button>
+    </div>
+    <div class="row">
+      <div>2022-02-27 07:18</div>
+    </div>
+    <div class="row">
+      <h2>Aged Partner Balance</h2>
+    </div>
+    <div class="row">
+      <label for="start-date2">Start Date:</label>
+      <div>2022-02-27</div>
+    </div>
+    <div class="row">
+      <label for="partner2">Partner's:</label>
+      <div>Receivable Accounts</div>
+    </div>
+    <div class="row">
+      <label for="period-length2">Period Length (days)</label>
+      <div>30</div>
+    </div>
+    <div class="row">
+      <label for="target-moves2">Target Moves:</label>
+      <div>All Posted Entries</div>
+    </div>
+    <div class="row">
+      <h2>Partners</h2>
+    </div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Not due</th>
+            <th>0-30</th>
+            <th>30-60</th>
+            <th>60-90</th>
+            <th>90-120</th>
+            <th>+120</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+
+
