@@ -1,6 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6a1b9a;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header nav a {
+    color: #fff;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-right .user-info {
+    margin-left: 10px;
+}
+
+.filter-section, .buttons, .ledger {
+    margin-bottom: 20px;
+}
+
+.filter-section label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.filter-section select, .filter-section input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.buttons button {
+    margin-right: 10px;
+    padding: 10px 20px;
+    background-color: #6a1b9a;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.ledger h2 {
+    margin-top: 0;
+}
+
+.ledger-info p {
+    margin: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table th {
+    background-color: #6a1b9a;
+    color: #fff;
+}
+  </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>General Ledger</title>
@@ -9,9 +108,8 @@
 <body>
     <div class="container">
         <header>
-            <div class="header-left">
-                <h1>Accounting</h1>
                 <nav>
+                    <a href="#">Accounting</a>
                     <a href="#">Overview</a>
                     <a href="#">Customers</a>
                     <a href="#">Vendors</a>
@@ -19,12 +117,7 @@
                     <a href="#">Reporting</a>
                     <a href="#">Configuration</a>
                 </nav>
-            </div>
-            <div class="header-right">
-                <span class="user-info">Mitchell Admin (15,25)</span>
-            </div>
         </header>
-        
         <main>
             <section class="filter-section">
                 <div class="journals">
@@ -40,6 +133,9 @@
                         <option>Inventory Valuation</option>
                         <option>Point of Sale</option>
                     </select>
+                <div class="analytic accounts">
+                    <label for="analytic accounts">Analytic accounts:</label>
+                    <input type="text" id="partners">
                 </div>
                 <div class="accounts">
                     <label for="accounts">Accounts:</label>
@@ -54,8 +150,8 @@
             </section>
             
             <section class="buttons">
-                <button>View</button>
-                <button>Print</button>
+                <button>View</button> <p>or</p>
+                <button>Print</button> <p>or</p>
                 <button>Print Excel</button>
             </section>
             
@@ -84,77 +180,54 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>2022-01-01</td>
-                            <td>BNK1</td>
-                            <td>Azure Interior</td>
-                            <td>BNK1/2022/01/0002</td>
-                            <td>INV/2022/000002 and INV/2022/000003</td>
-                            <td></td>
-                            <td>Bank Fees</td>
-                            <td>$32.58</td>
-                            <td>$1,275.00</td>
-                            <td>$-4,481.87</td>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
                         </tr>
                         <tr>
-                            <td>2022-01-01</td>
-                            <td>BNK1</td>
-                            <td>Azure Interior</td>
-                            <td>BNK1/2022/01/0003</td>
-                            <td>Bank Fees</td>
-                            <td></td>
-                            <td></td>
-                            <td>$32.58</td>
-                            <td>$0.00</td>
-                            <td>$-1,242.42</td>
-                        </tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                      </tr>
                         <tr>
-                            <td>2022-01-01</td>
-                            <td>BNK1</td>
-                            <td>Azure Interior</td>
-                            <td>BNK1/2022/01/0004</td>
-                            <td>Payment of Invoice 2022/000001</td>
-                            <td></td>
-                            <td></td>
-                            <td>$0.00</td>
-                            <td>$0.00</td>
-                            <td>$-3,892.42</td>
-                        </tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                      </tr>
                         <tr>
-                            <td>2022-01-01</td>
-                            <td>BNK1</td>
-                            <td>Azure Interior</td>
-                            <td>BNK1/2022/01/0005</td>
-                            <td>Year Interests</td>
                             <td></td>
                             <td></td>
-                            <td>$0.00</td>
-                            <td>$102.78</td>
-                            <td>$-3,995.20</td>
-                        </tr>
-                        <tr>
-                            <td>2022-01-01</td>
-                            <td>BNK1</td>
-                            <td>Deco Addict</td>
-                            <td>BNK1/2022/01/0006</td>
-                            <td>INV/2022/000002</td>
                             <td></td>
                             <td></td>
-                            <td>$0.00</td>
-                            <td>$750.00</td>
-                            <td>$-4,745.20</td>
-                        </tr>
-                        <tr>
-                            <td>2022-01-01</td>
-                            <td>BNK1</td>
-                            <td>Deco Addict</td>
-                            <td>BNK1/2022/01/0007</td>
-                            <td>ZR789238 1007 AX 9411516318 T5 BRT. 100,00€ c/ croip</td>
                             <td></td>
                             <td></td>
-                            <td>$0.00</td>
-                            <td>$96.67</td>
-                            <td>$-4,841.87</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                     </tbody>
                 </table>
