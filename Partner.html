@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header {
+  background-color: #c1aed6;
+  padding: 10px 20px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-left i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-right .button {
+  background-color: #fff;
+  border: none;
+  padding: 8px 15px;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.content {
+  background-color: #fff;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.table th {
+  background-color: #f2f2f2;
+}
+
+.table-header {
+  background-color: #f2f2f2;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.table-header-left {
+  display: flex;
+  align-items: center;
+}
+
+.table-header-left h2 {
+  margin: 0;
+  margin-right: 20px;
+}
+
+.table-header-right {
+  display: flex;
+  align-items: center;
+}
+
+.table-header-right .button {
+  background-color: #fff;
+  border: none;
+  padding: 8px 15px;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.table-body {
+  margin-top: 20px;
+}
+
+.table-body tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table-body tr:hover {
+  background-color: #ddd;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #c1aed6;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 10px;
+}
+
+.user-info .user-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-info .user-name {
+  margin: 0;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="header-left">
+      <i></i>
+      <h2>Accounting</h2>
+    </div>
+    <div class="header-right">
+      <button class="button">Overview</button>
+      <button class="button">Customers</button>
+      <button class="button">Vendors</button>
+      <button class="button">Accounting</button>
+      <button class="button">Reporting</button>
+      <button class="button">Configuration</button>
+    </div>
+  </div>
+  <div class="user-info">
+    <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=30&d=identicon&r=PG" class="user-avatar" alt="User Avatar">
+    <span class="user-name">Mitchell Admin</span>
+  </div>
+</div>
+<div class="content">
+  <div class="table-header">
+    <div class="table-header-left">
+      <h2>Partner Ledger</h2>
+    </div>
+    <div class="table-header-right">
+      <button class="button">View</button>
+      <button class="button">Print</button>
+      <button class="button">Print Excel</button>
+    </div>
+  </div>
+  <div class="table-header">
+    <div class="table-header-left">
+      <h3>Company:</h3>
+      <h3>YourCompany</h3>
+    </div>
+    <div class="table-header-right">
+      <h3>Target Moves:</h3>
+      <h3>All Posted Entries</h3>
+    </div>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>JRNL</th>
+        <th>Account</th>
+        <th>Ref</th>
+        <th>Debit</th>
+        <th>Credit</th>
+        <th>Balance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>2022-02-01</td>
+        <td>INV</td>
+        <td>121000</td>
+        <td>INV/2022/00001-INV/2022/00001</td>
+        <td>$ 39,655.45</td>
+        <td>$ 0.00</td>
+        <td>$ 39,655.45</td>
+      </tr>
+      <tr>
+        <td>2022-02-25</td>
+        <td>INV</td>
+        <td>121000</td>
+        <td>INV/2022/00007-INV/2022/00007</td>
+        <td>$ 36,512.50</td>
+        <td>$ 0.00</td>
+        <td>$ 36,512.50</td>
+      </tr>
+      <tr>
+        <td>2022-02-25</td>
+        <td>INV</td>
+        <td>121000</td>
+        <td>INV/2022/00006-INV/2022/00006</td>
+        <td>$ 537.05</td>
+        <td>$ 0.00</td>
+        <td>$ 37.049.55</td>
+      </tr>
+      <tr>
+        <td>2022-02-25</td>
+        <td>INV</td>
+        <td>121000</td>
+        <td>INV/2022/00005-INV/2022/00005</td>
+        <td>$ 537.05</td>
+        <td>$ 0.00</td>
+        <td>$ 37,586.60</td>
+      </tr>
+      <tr>
+        <td>2022-02-25</td>
+        <td>INV</td>
+        <td>121000</td>
+        <td>INV/2022/00005-INV/2022/00005</td>
+        <td>$ 2,068.85</td>
+        <td>$ 0.00</td>
+        <td>$ 39,655.45</td>
+      </tr>
+      <tr>
+        <td>2022-02-08</td>
+        <td>INV</td>
+        <td>121000</td>
+        <td>INV/2022/00003-INV/2022/00003</td>
+        <td>$ 107,199.55</td>
+        <td>$ 0.00</td>
+        <td>$ 107,199.55</td>
+      </tr>
+      <tr>
+        <td>2022-02-08</td>
+        <td>INV</td>
+        <td>121000</td>
+        <td>INV/2022/00002-INV/2022/00002</td>
+        <td>$ 22,137.50</td>
+        <td>$ 0.00</td>
+        <td>$ 22,137.50</td>
+      </tr>
+      <tr>
+        <td>2022-02-10</td>
+        <td>INV</td>
+        <td>121000</td>
+        <td>INV/2022/00004-INV/2022/00004</td>
+        <td>$ 48,012.50</td>
+        <td>$ 0.00</td>
+        <td>$ 70,150.00</td>
+      </tr>
+      <tr>
+        <td>2022-02-25</td>
+        <td>INV</td>
+        <td>121000</td>
+        <td>INV/2022/00008-INV/2022/00008</td>
+        <td>$ 36,512.50</td>
+        <td>$ 0.00</td>
+        <td>$ 106,662.50</td>
+      </tr>
+      <tr>
+        <td>2022-02-25</td>
+        <td>INV</td>
+        <td>121000</td>
+        <td>INV/2022/00010-INV/2022/00010</td>
+        <td>$ 537.05</td>
+        <td>$ 0.00</td>
+        <td>$ 107,199.55</td>
+      </tr>
+      <tr>
+        <td>2022-02-25</td>
+        <td>INV</td>
+        <td>121000</td>
+        <td>INV/2022/00013-INV/2022/00013</td>
+        <td>$ 2,270.33</td>
+        <td>$ 0.00</td>
+        <td>$ 2,270.33</td>
+      </tr>
+      <tr>
+        <td>2022-02-25</td>
+        <td>INV</td>
+        <td>121000</td>
+        <td>INV/2022/00014-INV/2022/00014</td>
+        <td>$ 356.27</td>
+        <td>$ 0.00</td>
+        <td>$ 356.27</td>
+      </tr>
+      <tr>
+        <td>2022-02-25</td>
+        <td>INV</td>
+        <td>121000</td>
+        <td>INV/2022/00009-INV/2022/00009</td>
+        <td>$ 18.17</td>
+        <td>$ 0.00</td>
+        <td>$ 374.44</td>
+      </tr>
+      <tr>
+        <td>2022-02-25</td>
+        <td>INV</td>
+        <td>121000</td>
+        <td>INV/2022/00012-INV/2022/00012</td>
+        <td>$ 18.17</td>
+        <td>$ 0.00</td>
+        <td>$ 392.61</td>
+      </tr>
+      <tr>
+        <td>2022-02-25</td>
+        <td>INV</td>
+        <td>121000</td>
+        <td>INV/2022/00011-INV/2022/00011</td>
+        <td>$ 187.22</td>
+        <td>$ 0.00</td>
+        <td>$ 579.83</td>
+      </tr>
+      <tr>
+        <td>2022-02-25</td>
+        <td>INV</td>
+        <td>121000</td>
+        <td>INV/2022/00012-INV/2022/00012</td>
+        <td>$ 1,352.40</td>
+        <td>$ 0.00</td>
+        <td>$ 1,932.23</td>
+      </tr>
+      <tr>
+        <td>2022-02-25</td>
+        <td>INV</td>
+        <td>121000</td>
+        <td>INV/2022/00011-INV/2022/00011</td>
+        <td>$ 338.10</td>
+        <td>$ 0.00</td>
+        <td>$ 2,270.33</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
