@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.header {
+  background-color:  #9b78c8;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.header a {
+  color: white;
+  text-decoration: none;
+  padding: 5px;
+}
+
+.header a:hover {
+  background-color:  #9b78c8;
+}
+
+.header .right {
+  float: right;
+}
+
+.content {
+  padding: 10px;
+}
+
+.row {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.label {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.input {
+  flex: 2;
+}
+
+.input input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color:  #9b78c8;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color:  #9b78c8;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table th, .table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #f2f2f2;
+}
+</style>
+</head>
+<title>Cash</title>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="center">
+    <a href="#">Accounting</a>
+      <a href="#">Dashboard</a>
+      <a href="#">Customers</a>
+      <a href="#">Vendors</a>
+      <a href="#">Accounting</a>
+      <a href="#">Follow-Ups</a>
+      <a href="#">Reporting</a>
+      <a href="#">Configuration</a>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="row">
+      <div class="label">Target Moves:</div>
+      <div class="input">
+        <input type="radio" name="target" value="posted">
+        <label for="posted">Posted Entries</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="label"></div>
+      <div class="input">
+        <input type="radio" name="target" value="all">
+        <label for="all">All Entries</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="label">Include Initial Balances:</div>
+      <div class="input">
+        <input type="checkbox" name="balance" value="yes">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="label">Start Date:</div>
+      <div class="input">
+        <input type="date" value="2022-09-02">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="label">End Date:</div>
+      <div class="input">
+        <input type="date" value="2022-09-02">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="label">Accounts:</div>
+      <div class="input">
+        <select>
+          <option value="101402">101.402 Outstanding Receipts</option>
+          <option value="101403">101.403 Outstanding Payments</option>
+          <option value="101501">101.501 Cash</option>
+          <option value="101404">Customer Invoices</option>
+          <option value="101405">Vendor Bills</option>
+          <option value="101406">Miscellaneous Operations</option>
+          <option value="101407">Exchange Difference</option>
+          <option value="101408">Bank</option>
+          <option value="101409">Cash</option>
+          <option value="101410">Cash Basis Taxes</option>
+          <option value="101411">Inventory Valuation</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="label">Journals:</div>
+      <div class="input">
+        <select>
+          <option value="INV">INV</option>
+          <option value="BILL">BILL</option>
+          <option value="MISC">MISC</option>
+          <option value="EXCH">EXCH</option>
+          <option value="BNK1">BNK1</option>
+          <option value="CSH1">CSH1</option>
+          <option value="CABA">CABA</option>
+          <option value="STJ">STJ</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button class="button">View</button>
+      <button class="button">Print</button>
+      <button class="button">Print Excel</button>
+      <button class="button">Cancel</button>
+    </div>
+
+    <div>
+      2022-09-02 08:50
+    </div>
+
+    <h3>Account Cash Book</h3>
+
+    <div class="row">
+      <div class="label">Journals:</div>
+      <div class="input">
+        INV, BILL, MISC, EXCH, BNK1, CSH1, CABA, STJ
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="label">Start Date:</div>
+      <div class="input">
+        2022-09-02
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="label">End Date:</div>
+      <div class="input">
+        2022-09-02
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="label">Sorted By:</div>
+      <div class="input">
+        Date
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="label"></div>
+      <div class="input">
+        Target Moves: Posted Entries
+      </div>
+    </div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>JRNL</th>
+          <th>Partner</th>
+          <th>Ref</th>
+          <th>Move</th>
+          <th>Entry Label</th>
+          <th>Debit</th>
+          <th>Credit</th>
+          <th>Balance</th>
+          <th>Currency</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2022-09-02</td>
+          <td>CSH1</td>
+          <td>Test</td>
+          <td>INV/2022/00009</td>
+          <td>CSH1/2022/09/0001</td>
+          <td>Customer Payment $ 169.05 - Test - 09/02/2022</td>
+          <td>$ 169.05</td>
+          <td>$ 0.00</td>
+          <td>$ 169.05</td>
+          <td>169.05 $</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</body>
+</html>
